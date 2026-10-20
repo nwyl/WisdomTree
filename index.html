@@ -3,32 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>our tree</title>
+    <title>知识积累是人类进步之梯</title>
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
-<!-- 顶部工具栏：鼠标靠近顶部时滑下来 -->
 <header id="toolbar">
     <button id="resetView">重置</button>
 </header>
 
-<!-- 顶部感应区 -->
 <div id="topTrigger"></div>
 
-<!-- 可拖拽视口 -->
 <div id="viewport">
     <div id="canvas">
-        <!-- 球层 -->
+        <!-- 核心作为固定锚点，写死在 HTML 里 -->
         <div class="node core" style="left: 1000px; top: 1000px;">
             <img class="node-img" src="./images/core.png" alt="core" />
         </div>
 
-        <div class="node small" style="left: 1400px; top: 1000px;">语文</div>
-        <div class="node small" style="left: 1000px; top: 1400px;">物理</div>
-        <div class="node small" style="left: 600px;  top: 1000px;">化学</div>
-        <div class="node small" style="left: 1000px; top: 600px;">生物</div>
-
+        <!-- 小卡片由 JS 根据数据生成 -->
     </div>
 </div>
 
