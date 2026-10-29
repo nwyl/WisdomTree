@@ -8,21 +8,43 @@
 </head>
 <body>
 
-<header id="toolbar">
-    <button id="resetView">重置</button>
-</header>
+<!-- 顶部：感应区与工具栏合并为一个 hover 容器，展开/收起交给 CSS -->
+<div id="topZone">
+    <header id="toolbar">
+        <div class="toolbar-left">
+            <button id="menuBtn" type="button" aria-label="菜单" aria-expanded="false">☰</button>
+            <div id="searchBox">
+                <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="搜索卡片上的文字…"
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="搜索卡片上的文字"
+                    aria-expanded="false"
+                    aria-controls="searchResults"
+                />
+                <div id="searchResults" class="search-results" aria-live="polite"></div>
+            </div>
+        </div>
+        <button id="resetView" type="button">重置</button>
+    </header>
+</div>
 
-<div id="topTrigger"></div>
+<!-- 侧边栏：卡片列表已移除，留给后续菜单功能 -->
+<aside id="sidebar">
+    <div class="sidebar-title">菜单</div>
+    <p class="sidebar-hint">菜单功能将在此扩展</p>
+</aside>
 
 <div id="viewport">
-    <div id="canvas">
-        <!-- 核心作为固定锚点，写死在 HTML 里 -->
-        <div class="node core" style="left: 1000px; top: 1000px;">
-            <img class="node-img" src="./images/core.png" alt="core" />
-        </div>
+    <div id="canvas"></div>
+</div>
 
-        <!-- 小卡片由 JS 根据数据生成 -->
-    </div>
+<!-- 图例：区分两种连接 -->
+<div id="legend" aria-hidden="true">
+    <span><i class="legend-line primary"></i>主要前置</span>
+    <span><i class="legend-line network"></i>知识关联</span>
 </div>
 
 <script src="./script.js"></script>
